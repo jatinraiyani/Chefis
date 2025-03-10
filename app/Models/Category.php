@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Category extends Model
+{
+    protected $table = "categories";
+
+    protected $fillable = ['category_name','category_description','category_image','status','chef_id'];
+
+    public function chefData(){
+        return $this->belongsTo('App\User','chef_id');
+    }
+}
